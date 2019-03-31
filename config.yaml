@@ -1,0 +1,13 @@
+baseURL : https://wegoat.dev
+languageCode : en
+title : We Goat Dev
+
+params:
+    description: Explore dev problem through code
+
+staticDir: static
+
+permalinks:
+  posts : /:title/
+
+summaryLength: 25

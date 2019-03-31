@@ -1,0 +1,170 @@
+$gold: rgb(227, 187, 84)
+
+body
+    margin: 5% auto
+    width: 60%
+    font-size: 20px
+    line-height: 1.8rem
+    font-family: 'Oxygen', sans-serif
+    color: rgb(87, 87, 87)
+.darkmode
+    background: rgb(57, 57, 57)
+    color: rgb(227, 227, 227)
+    a
+        color: rgb(227, 227, 227)
+    .title
+        color: $gold
+        a
+            color: $gold
+
+.is-hidden
+    display: none
+
+.columns
+    display: flex
+
+a
+    color: rgb(48, 48, 48)
+    text-decoration: none
+    &:hover
+        cursor: pointer
+
+ul
+    padding-left: 0px
+
+pre
+    padding: 10px
+    font-size: 1rem
+    overflow: auto
+
+header
+    display: flex
+    justify-content: space-between
+    margin-bottom: 20px
+    font-size: 20px
+
+#brand
+    display: flex
+    align-items: center
+    img
+        margin-right: 10px
+    a
+        font-size: 1.8rem
+    p
+        margin: 0px
+
+#theme
+    font-size: 1.5rem
+    &:hover
+        cursor: pointer
+
+.is-avatar
+    border-radius: 50%
+
+.posts
+    .title
+        font-size: 1.7rem
+        margin-bottom: 0px
+        &:hover
+            text-decoration: underline
+        a
+            display: block
+            width: 100%
+    .desc
+        margin: 5px 0
+
+kbd
+    background: rgb(175, 175, 175)
+    padding: 1px 3px
+    font-size: 1rem
+    color: #242729
+    text-shadow: 0 1px 0 #FFF
+    background-color: #e1e3e5
+    border: 1px solid #adb3b9
+    border-radius: 3px
+
+#content
+    h2, h3
+        color: $gold
+        margin-top: 40px
+    a
+        text-decoration: underline
+    img
+        display: block
+        margin-left: auto
+        margin-right: auto
+        width: 75%
+
+#date
+    display: inline-block
+    font-size: 1rem
+
+.tags
+    font-size: 1rem
+    list-style: none
+    li
+        display: inline-block
+    a
+        padding: 0px 10px
+        border-radius: 3px
+        background: white
+        display: block
+        font-size: 0.8rem
+        color: rgb(45, 45, 45)
+    .tags-api
+        background: rgb(215, 41, 57)
+        color: white
+    .tags-atom
+        background: #1DA977
+    .tags-css
+        background: rgb(83, 212, 200)
+    .tags-canvas
+        background: rgb(105, 176, 203)
+        color: white
+    .tags-firebase
+        background: rgb(235, 190, 55)
+    .tags-go
+        background: rgb(89, 205, 255)
+    .tags-html
+        background: rgb(245, 108, 58)
+        color: white
+    .tags-hugo
+        background: #FF4088
+        color: white
+    .tags-javascript
+        background: rgb(212, 210, 83)
+    .tags-nodejs
+        background: rgb(142, 222, 138)
+    .tags-php
+        background: rgb(190, 50, 193)
+    .tags-python
+        background: rgb(60, 112, 246)
+    .tags-productivity
+        background: #4165c3
+        color: white
+    .tags-react
+        background: rgb(53, 152, 232)
+    .tags-sharing
+        background: rgb(249, 112, 153)
+        color: white
+    .tags-tool
+        background: rgb(224, 166, 52)
+    .tags-vue
+        background: rgb(92, 179, 108)
+
+footer
+    a
+        text-decoration: underline
+
+@media only screen and (max-width: 760px)
+    body
+        width: 90%
+        font-size: 18px
+
+    .columns
+        display: block
+
+    #brand
+        a
+            font-size: 1.5rem
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ if eq .Kind "taxonomy" }}{{ .Title }} | WeGoat.Dev {{ else }}{{ .Title }}{{ end }} </title>
+    <meta name="description" content="{{ if .Description }} {{ .Description }} {{ else }} {{ .Site.Params.Description }} - {{ .Title }} {{ end }}" property="og:description">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-137237806-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-137237806-1');
+    </script>
+
+</head>
+<body class="darkmode">
+    <header>
+        <div id="brand">
+            <img src="https://res.cloudinary.com/dr1pp4pqp/image/upload/v1554008761/blog/logo-wegoatdev.png" alt="logo we goat dev by sergio souza" height="80" width="80" class="is-avatar">
+            <div>
+                <a href='/'> WeGoat.dev</a>
+                <p>You'll never code alone</p>
+            </div>
+        </div>
+
+        <div id="theme">
+            <div onclick="setDarkMode(true)" id="darkBtn" class=""> 🌚  <span>Dark</span></div>
+            <div onclick="setDarkMode(false)" id="lightBtn" class="is-hidden"> 🌝 <span>Light</span> </div>
+        </div>
+
+        <script>
+            //check localstorage
+            if(localStorage.getItem('preferredTheme') == 'dark') {
+                setDarkMode(true)
+            }
+
+            function setDarkMode(isDark) {
+                var darkBtn = document.getElementById('darkBtn')
+                var lightBtn = document.getElementById('lightBtn')
+
+                if(isDark) {
+                    lightBtn.style.display = "block"
+                    darkBtn.style.display = "none"
+                    localStorage.setItem('preferredTheme', 'dark');
+                } else {
+                    lightBtn.style.display = "none"
+                    darkBtn.style.display = "block"
+                    localStorage.removeItem('preferredTheme');
+                }
+
+                document.body.classList.toggle("darkmode");
+            }
+        </script>
+    </header>
+
+    {{ if or (.IsHome) (eq .Kind "taxonomy") }}
+    <nav class="tags">
+        {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+            {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
+                <li><a class="tags-{{ $name }}"  href="{{ .Permalink }}">{{ $name }}</a></li>
+            {{ end }}
+        {{ end }}
+    </nav>
+    {{ end }}

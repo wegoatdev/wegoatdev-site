@@ -1,6 +1,8 @@
 ## Cheatsheet
 New file
     hugo new posts/mypost.md
+    ALIAS
+    hugonp your title
 
 Watch Sass
  sass --watch assets-dev/main.sass:static/css/main.css --style compressed
@@ -12,3 +14,4 @@ Highlight
     {{< highlight lang >}}
     ..
     {{< / highlight >}}
+

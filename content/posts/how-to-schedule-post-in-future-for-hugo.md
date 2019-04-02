@@ -3,6 +3,7 @@ title: "How to Schedule Post in Future for Hugo"
 date: 2019-04-01T09:46:10+08:00
 description: "How to set hugo post schedule in the future with netlify and cron task"
 tags: ["hugo", "tool"]
+image: "https://res.cloudinary.com/dr1pp4pqp/image/upload/v1554076813/blog/Screen_Shot_2019-04-01_at_7.00.16_AM.png"
 ---
 
 As i mentioned in previous post, [i move my website from github-pages to Netlify](/move-my-hugo-site-from-github-pages-to-netlify/) , so i can set a schedule for my Hugo post in future.

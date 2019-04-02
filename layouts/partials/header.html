@@ -6,6 +6,15 @@
 
     <title>{{ if eq .Kind "taxonomy" }}{{ .Title }} | WeGoat.Dev {{ else }}{{ .Title }}{{ end }} </title>
     <meta name="description" content="{{ if .Description }} {{ .Description }} {{ else }} {{ .Site.Params.Description }} - {{ .Title }} {{ end }}" property="og:description">
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@wegoatdev" />
+    <meta name="twitter:creator" content="@wegoatdev" />
+    <meta property="og:url" content=" {{ .Permalink }}" />
+    <meta property="og:title" content="{{ if eq .Kind "taxonomy" }}{{ .Title }} | WeGoat.Dev {{ else }}{{ .Title }}{{ end }}" />
+    <meta property="og:description" content="{{ if .Description }} {{ .Description }} {{ else }} {{ .Site.Params.Description }} - {{ .Title }} {{ end }}" />
+    <meta property="og:image" content="{{if .Params.image}}{{.Params.image}}{{else}}https://res.cloudinary.com/dr1pp4pqp/image/upload/v1554008761/blog/logo-wegoatdev.png{{end}}" />
+
     <link rel="stylesheet" href="/css/main.css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>

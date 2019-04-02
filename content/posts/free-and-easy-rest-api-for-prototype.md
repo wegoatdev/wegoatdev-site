@@ -3,6 +3,7 @@ title: "Free and Easy Rest API for Prototype"
 description: "How to make an API free for prototyping your app without writing any backend code or setup a server"
 date: 2019-03-31T13:04:22+08:00
 tags: ["api", "tool"]
+image: "https://res.cloudinary.com/dr1pp4pqp/image/upload/v1554010128/blog/Screen_Shot_2019-03-31_at_1.26.08_PM.png"
 ---
 
 Do you want to create an app, but not sure how it will go just yet? Thinking about all server setup, managing database, and other stuff is scary. Good news is, we can serve our database from API (Application Programming Interface) without configuring any server or write backend code!

@@ -11,3 +11,5 @@ permalinks:
   posts : /:title/
 
 summaryLength: 25
+
+paginate : 12

@@ -24,4 +24,5 @@ fields:
   name: image
   label: image
 pages:
+- content/posts/how-to-customize-front-matter-in-hugo.md
 - content/posts/how-to-schedule-post-in-future-for-hugo.md

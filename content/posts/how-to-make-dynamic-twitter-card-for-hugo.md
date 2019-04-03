@@ -5,10 +5,10 @@ tags:
 - hugo
 description: Hot to make a nice dynamic twitter card in Hugo to optimize our twitter
   post
-image: Screen_Shot_2019-04-02_at_11.27.21_AM.png
+image: https://res.cloudinary.com/wegoatdev/image/upload/v1554176110/blog/Screen_Shot_2019-04-02_at_11.27.21_AM.png
 
 ---
-Let's see how to make a nice dynamic twitter card in Hugo to optimize our twitter post, so it will show us an image, summary and other relevant information.
+Let's see how to make a nice dynamic twitter card in Hugo to optimize our twitter post, so it will show us an image, summary and other relevant information when we share it on twitter.
 
 I'm sure you have a partial header somewhere in your Hugo blog, where you put HTML <head> tag inside. Open that file, and let's attach this meta information
 
@@ -24,12 +24,13 @@ I'm sure you have a partial header somewhere in your Hugo blog, where you put HT
 
 It's safe to put this on the main file. Since we set a dynamic rule for some meta information.
 
-- Permalink will get our current page automatically
-- In title in case you have a tag/taxonomy page use above, but if you don't have one, just use {{.Title}}
-- Description also will generate information depend are you in homepage or single page
-- For the meta image we set an if-else case and put a default image there,
+* Permalink will get our current page automatically
+* In title in case you have a tag/taxonomy page use above, but if you don't have one, just use {{.Title}}
+* Description also will generate information depend are you in homepage or single page
+* For the meta image we set an if-else case and put a default image there,
 
 ### How to make the image twitter card dynamic?
+
 In each your post, add "image" attribute
 {{< highlight Bash >}}
 image: "Your-image-source.jpg"

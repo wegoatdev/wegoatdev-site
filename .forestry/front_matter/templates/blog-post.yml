@@ -24,5 +24,6 @@ fields:
   name: image
   label: image
 pages:
+- content/posts/how-to-make-dynamic-twitter-card-for-hugo.md
 - content/posts/how-to-customize-front-matter-in-hugo.md
 - content/posts/how-to-schedule-post-in-future-for-hugo.md

@@ -3,6 +3,7 @@ title: "How to Create Poster With Html Canvas"
 date: 2019-03-31T06:14:17+08:00
 description: "Learn how to make a poster with html canvas, in this example we will make a poster for making a quoter for instagram post"
 tags: ["html", "javascript", "canvas"]
+image: "https://res.cloudinary.com/dr1pp4pqp/image/upload/v1553983982/blog/poster-sample.png"
 ---
 
 Website is more powerful that we thought, it has [canvas element](https://www.w3schools.com/html/html5_canvas.asp) to draw graphics on the web. If we combine this with the ability to play DOM in javascript, well, actually to draw in canvas we have to use javascript :D.

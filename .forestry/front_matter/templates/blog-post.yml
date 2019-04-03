@@ -23,3 +23,5 @@ fields:
 - type: file
   name: image
   label: image
+pages:
+- content/posts/how-to-schedule-post-in-future-for-hugo.md

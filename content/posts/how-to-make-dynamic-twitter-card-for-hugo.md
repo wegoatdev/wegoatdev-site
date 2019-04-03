@@ -1,11 +1,13 @@
 ---
-title: "How to Make Dynamic Twitter Card for Hugo"
-date: 2019-04-04T10:26:14+08:00
-tags: ["hugo"]
-description: "Hot to make a nice dynamic twitter card in Hugo to optimize our twitter post"
-image: "https://res.cloudinary.com/dr1pp4pqp/image/upload/v1554176110/blog/Screen_Shot_2019-04-02_at_11.27.21_AM.png"
----
+title: How to Make Dynamic Twitter Card for Hugo
+date: 2019-04-04 02:26:14 +0000
+tags:
+- hugo
+description: Hot to make a nice dynamic twitter card in Hugo to optimize our twitter
+  post
+image: Screen_Shot_2019-04-02_at_11.27.21_AM.png
 
+---
 Let's see how to make a nice dynamic twitter card in Hugo to optimize our twitter post, so it will show us an image, summary and other relevant information.
 
 I'm sure you have a partial header somewhere in your Hugo blog, where you put HTML <head> tag inside. Open that file, and let's attach this meta information

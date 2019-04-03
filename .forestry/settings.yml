@@ -17,7 +17,7 @@ sections:
 upload_dir: blog
 public_path: https://res.cloudinary.com/wegoatdev/image/upload
 front_matter_path: ''
-use_front_matter_path: 
+use_front_matter_path: false
 file_template: ":filename:"
 build:
   preview_command: hugo -E -F -D -b $DEPLOY_URL -d public

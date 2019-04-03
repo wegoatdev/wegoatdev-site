@@ -14,7 +14,7 @@ How to:
 
 * in "Netlify" Menu settings > Build and deploy > check "build hooks" section, click "Add build Hook" button.
 
-![](/image/upload/v1554076813/blog/Screen_Shot_2019-04-01_at_7.00.16_AM.png)
+![](https://res.cloudinary.com/wegoatdev/image/upload/v1554076813/blog/Screen_Shot_2019-04-01_at_7.00.16_AM.png)
 
 * This will generate a unique url, when we send request post to this link, it will build our site from the repository.
 * Create a cron job for this. "What's cron?" it's a task that we want to run automatically. In this example, we'll run a cron task every X times to send a post request to our previous generated link

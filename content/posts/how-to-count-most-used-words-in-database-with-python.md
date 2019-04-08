@@ -12,39 +12,27 @@ Here's a little script how you can get / count most common words from your datab
 
 {{< highlight python >}}
 
-from collections import Counter  
-import mysql.connector
+    from collections import Counterimport mysql.connector
 
-\#connect mysql database  
-mydb = mysql.connector.connect(  
-host="127.0.0.1",  
-user="username",  
-passwd="password",  
-database="namadatabase"  
-)
+    #connect mysql databasemydb = mysql.connector.connect(host="127.0.0.1",user="username",passwd="password",database="namadatabase")
 
-\#so we can get the data by key  
-cursor = mydb.cursor(dictionary=True)
+    #so we can get the data by keycursor = mydb.cursor(dictionary=True)
 
-cursor.execute("SELECT column FROM table")
+    cursor.execute("SELECT column FROM table")
 
-myresult = cursor.fetchall()
+    myresult = cursor.fetchall()
 
-\#combine all words in one big variable
+    #combine all words in one big variable
 
-titles = ''
+    titles = ''
 
-for item in myresult:  
-titles += item\['title'\] + ' '
+    for item in myresult:titles += item['title'] + ' '
 
-\#split sentences to words  
-words  = titles.split()
+    #split sentences to wordswords  = titles.split()
 
     #search 5 commond words   
 
-Counter  = Counter(words)  
-most_words = Counter.most_common(5)  
-print(most_words)
+    Counter  = Counter(words)most_words = Counter.most_common(5)print(most_words)
 
 {{< / highlight >}}
 

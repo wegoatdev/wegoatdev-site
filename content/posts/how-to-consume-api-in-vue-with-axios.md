@@ -22,7 +22,6 @@ To initialize data, we use "mounted" function from VueJS, since it's the first f
 
 {{< highlight js >}}
 
-    <script>
     new Vue({ 
       el: '#app', 
       data () {
@@ -30,10 +29,9 @@ To initialize data, we use "mounted" function from VueJS, since it's the first f
       }, 
       mounted () { 
        axios.get('YOURAPISOURCE')
-             .then(res => (this.info = res)) 
-             } 
+         .then(res => (this.info = res)) 
+        } 
       })
-      </script>
 
 {{< / highlight >}}
 
@@ -52,7 +50,6 @@ We add .data in our response
 
 {{< highlight js >}}
 
-    <script>
     new Vue({ 
       el: '#app', 
       data () {
@@ -61,9 +58,8 @@ We add .data in our response
       mounted () { 
        axios.get('YOURAPISOURCE')
              .then(res => (this.info = res.data)) 
-             } 
+       } 
       })
-      </script>
 
 {{< / highlight >}}
 
@@ -117,7 +113,6 @@ With both these variable we can prepare a nice feedback for our user
         <div v-if="error">
            Sorry! something is broken
          </div>
-                
     </div>            
 
 {{< / highlight >}}

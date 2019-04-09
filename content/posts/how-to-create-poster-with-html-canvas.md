@@ -71,168 +71,151 @@ Here is how the form looks like, you can customize it however you want. We will 
 
 ![](https://res.cloudinary.com/wegoatdev/image/upload/v1553985377/blog/Screen_Shot_2019-03-31_at_6.33.50_AM.png)
 
-Now the magic part, i'll also explain it more in comments.
-{{< highlight js >}}
-var canvas = document.getElementById("myCanvas")
-var ctx    = canvas.getContext("2d")
-var brandImgSrc = ''
-var PhotoImgSrc = ''
-
-//====== Draw Background ======================
-//autorun for first time, to draw blank canvas
-drawBG()
-function drawBG(){
-ctx.fillStyle = "white";
-ctx.fillRect(0, 0, canvas.width, canvas.height);
-}
-
-//===== Draw Text/Quote ======================
-//draw text that depends on font size and line-height,
-//we already gave placeholder as init value
-function drawText(){
-var text = document.getElementById('quote').value
-var text_fs = document.getElementById('quote_fs').value
-var text_lh = parseInt(document.getElementById('quote_lh').value)
-
-    //font settings, color and style
-    ctx.font = text_fs + 'px Calibri'
-    ctx.fillStyle = 'rgb(68, 68, 68)'
-    ctx.textAlign = 'center'
-    // ctx.fillText(text, canvas.width/2, canvas.height/2)
+    Now the magic part, i'll also explain it more in comments.
+    {{< highlight js >}}
+    var canvas = document.getElementById("myCanvas")
+    var ctx    = canvas.getContext("2d")
+    var brandImgSrc = ''
+    var PhotoImgSrc = ''
     
-     var maxWidth = 480;
-     var lineHeight = text_lh;
+    //====== Draw Background ======================
+    //autorun for first time, to draw blank canvas
+    drawBG()
+    function drawBG(){
+      ctx.fillStyle = "white";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+
+    //===== Draw Text/Quote ======================
+    //draw text that depends on font size and line-height,
+    //we already gave placeholder as init value
+    function drawText(){
+      var text = document.getElementById('quote').value
+      var text_fs = document.getElementById('quote_fs').value
+      var text_lh = parseInt(document.getElementById('quote_lh').value)
+      //font settings, color and style
+      ctx.font = text_fs + 'px Calibri'
+      ctx.fillStyle = 'rgb(68, 68, 68)'
+      ctx.textAlign = 'center'
+      // ctx.fillText(text, canvas.width/2, canvas.height/2)
     
-     //x and y is the starting point of drawing
-     var x = canvas.width/2;
-     var y = canvas.height/2 - 50;
-    wrapText(ctx, text, x, y, maxWidth, lineHeight)
+       var maxWidth = 480;
+       var lineHeight = text_lh;
     
-    console.log("---drawn!---")
-    return false
+       //x and y is the starting point of drawing
+       var x = canvas.width/2;
+       var y = canvas.height/2 - 50;
+       wrapText(ctx, text, x, y, maxWidth, lineHeight)
+    
+       console.log("---drawn!---")
+       return false
+      }
 
-}
+    //Redraw will call all the functions, so we don't have to reload the page function reDraw() { ctx.clearRect(0, 0, canvas.width, canvas.height) drawBG() drawText() drawBrandImg() addPhoto() addName() }
 
-//Redrwa will call all the functions, so we don't have to reload the page
-function reDraw() {
-ctx.clearRect(0, 0, canvas.width, canvas.height)
-drawBG()
-drawText()
-drawBrandImg()
-addPhoto()
-addName()
-}
+    //===== Draw Brand/ Watermark
+    //read image from file and draw to canvas
+    function addBrand(event) {
+    	var reader = new FileReader();
+    	reader.onload = function(event){
+          brandImgSrc = event.target.result
+          drawBrandImg()
+      }
+    	reader.readAsDataURL(event.target.files[0]);
+    }
 
-//===== Draw Brand/ Watermark
-//read image from file and draw to canvas
-function addBrand(event) {
-var reader = new FileReader();
+    function drawBrandImg() {
+    	var img = new Image();
+    	img.onload = function(){
+    		ctx.drawImage(img, 300, 20, 180, 70);
+    	}
+    	img.src = brandImgSrc;
+    }
 
-    reader.onload = function(event){
-        brandImgSrc = event.target.result
-        drawBrandImg()
+    //===== Draw Photo ================
+    //draw image to canvas from a link
+    function addPhoto() {
+      var img = new Image()
+      var size = 80
+      var posX = (canvas.width/2)- (size/2)
+      var posY = 360
+    
+      img.onload = function(){
+          ctx.save()
+          roundedImage(posX, posY, size, size, 45)
+          ctx.clip()
+          ctx.drawImage(img, posX, posY, size, size)
+          ctx.restore()
+    	}
+    
+      PhotoImgSrc = document.getElementById('people_pic').value
+      img.src = PhotoImgSrc
+    }
+
+    function addName(){
+      var text = document.getElementById('people_name').value
+      //settings
+      ctx.font = '20pt Calibri'
+      ctx.fillStyle = 'rgb(68, 68, 68)'
+      ctx.textAlign = 'center'
+      // ctx.fillText(text, canvas.width/2, canvas.height/2)
+    
+       var maxWidth = canvas.width/2;
+       var lineHeight = 25;
+       var x = canvas.width/2;
+       var y = canvas.height - 35;
+      wrapText(ctx, text, x, y, maxWidth, lineHeight)
+    
+      console.log("---drawn!---")
+      return false
     }
     
-    reader.readAsDataURL(event.target.files[0]);
-
-}
-
-function drawBrandImg() {
-var img = new Image();
-img.onload = function(){
-ctx.drawImage(img, 300, 20, 180, 70);
-}
-img.src = brandImgSrc;
-}
-
-//===== Draw Photo ================
-//draw image to canvas from a link
-function addPhoto() {
-var img = new Image()
-var size = 80
-var posX = (canvas.width/2)- (size/2)
-var posY = 360
-
-    img.onload = function(){
-        ctx.save()
-        roundedImage(posX, posY, size, size, 45)
-        ctx.clip()
-        ctx.drawImage(img, posX, posY, size, size)
-        ctx.restore()
+    //Make our avatar in round shape automatically
+    //from: https://stackoverflow.com/questions/19585999/canvas-drawimage-with-round-corners
+    function roundedImage(x,y,width,height,radius){
+      ctx.beginPath();
+      ctx.moveTo(x + radius, y);
+      ctx.lineTo(x + width - radius, y);
+      ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+      ctx.lineTo(x + width, y + height - radius);
+      ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+      ctx.lineTo(x + radius, y + height);
+      ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+      ctx.lineTo(x, y + radius);
+      ctx.quadraticCurveTo(x, y, x + radius, y);
+      ctx.closePath();
     }
     
-    PhotoImgSrc = document.getElementById('people_pic').value
-    img.src = PhotoImgSrc
-
-}
-
-function addName(){
-var text = document.getElementById('people_name').value
-
-    //settings
-    ctx.font = '20pt Calibri'
-    ctx.fillStyle = 'rgb(68, 68, 68)'
-    ctx.textAlign = 'center'
-    // ctx.fillText(text, canvas.width/2, canvas.height/2)
+    //===== Wrap Text  ===========================
+    //How to wrap text in html canvas
+    //Original Source before edited: https://www.html5canvastutorials.com/tutorials/html5-canvas-wrap-text-tutorial/
+    function wrapText(context, text, x, y, maxWidth, lineHeight) {
+        var words = text.split(' ');
+        var line = '';
     
-     var maxWidth = canvas.width/2;
-     var lineHeight = 25;
-     var x = canvas.width/2;
-     var y = canvas.height - 35;
-    wrapText(ctx, text, x, y, maxWidth, lineHeight)
-    
-    console.log("---drawn!---")
-    return false
-
-}
-
-//Make our avatar in round shape automatically
-//from: https://stackoverflow.com/questions/19585999/canvas-drawimage-with-round-corners
-function roundedImage(x,y,width,height,radius){
-ctx.beginPath();
-ctx.moveTo(x + radius, y);
-ctx.lineTo(x + width - radius, y);
-ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
-ctx.lineTo(x + width, y + height - radius);
-ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
-ctx.lineTo(x + radius, y + height);
-ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
-ctx.lineTo(x, y + radius);
-ctx.quadraticCurveTo(x, y, x + radius, y);
-ctx.closePath();
-}
-
-//===== Wrap Text  ===========================
-//How to wrap text in html canvas
-// Original Source before edited: https://www.html5canvastutorials.com/tutorials/html5-canvas-wrap-text-tutorial/
-function wrapText(context, text, x, y, maxWidth, lineHeight) {
-var words = text.split(' ');
-var line = '';
-
-    //Make y point depend on font size
-    var perLine    = 4
-    var lines_num  = parseInt(words.length / perLine)
+        //Make y point depend on font size
+        var perLine    = 4
+        var lines_num  = parseInt(words.length / perLine)
         y =  y - (lines_num * 10)
         //---end
     
-    for(var n = 0; n < words.length; n++) {
-        var testLine = line + words[n] + ' ';
-        var metrics = context.measureText(testLine);
-        var testWidth = metrics.width;
+      for(var n = 0; n < words.length; n++) {
+          var testLine = line + words[n] + ' ';
+          var metrics = context.measureText(testLine);
+          var testWidth = metrics.width;
     
-        if (testWidth > maxWidth && n > 0) {
-          context.fillText(line, x, y);
-          line = words[n] + ' ';
-          y += lineHeight;
-        }
-        else
-          line = testLine;
+          if (testWidth > maxWidth && n > 0) {
+            context.fillText(line, x, y);
+            line = words[n] + ' ';
+            y += lineHeight;
+          }
+          else
+            line = testLine;
+      }
+    
+      context.fillText(line, x, y);
+      return false
     }
-    
-    context.fillText(line, x, y);
-    return false
-
-}
 
 {{< / highlight >}}
 Everytime you see X or Y variable, it's the starting point to draw something, you could try to change the position of each element by playing with these vars.

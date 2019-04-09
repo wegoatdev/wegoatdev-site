@@ -12,12 +12,16 @@ When playing with javascript library like Vuejs, often times we use an API, to d
 
 To initialize data, we use "mounted" function from VueJS, since it's the first function will be called in our app.
 
-{{< highlight js >}}
+{{< highlight html >}}
 
     <div id="app">
       {{ info }}
     </div>
-    
+
+{{< / highlight >}}
+
+{{< highlight js >}}
+
     <script>
     new Vue({ 
       el: '#app', 
@@ -35,14 +39,20 @@ To initialize data, we use "mounted" function from VueJS, since it's the first f
 
 It will output all the result from our get request to the API Endpoint we declared. You can automatically get the specific value by certain key. Let's say your API endpoint has "title" and "desc" keys.
 
-{{< highlight js >}}
+{{< highlight html >}}
 
     <div id="app">
        <p>{{ info.title }}</p>
        <p>{{ info.desc }}</p>
      </div>
-     
-     <script>
+
+{{< / highlight >}}
+
+We add .data in our response
+
+{{< highlight js >}}
+
+    <script>
     new Vue({ 
       el: '#app', 
       data () {
@@ -59,7 +69,7 @@ It will output all the result from our get request to the API Endpoint we declar
 
 ### Best practice for loading and error state
 
-When using an API as data source, we can't 100% sure how fast the data will be loaded or will it always successful or not. For better User Experience, we need to think about this case and give feedback for our user.
+When using an API as data source, we can't 100% sure how fast the data will be loaded or will it always be successful or not. For better User Experience, we need to think about this case and give feedback for our user.
 
 Axios provides catch() method, in case our request went wrong
 
@@ -93,7 +103,7 @@ We add two new variables, "loading" with first data is true, it will return fals
 
 With both these variable we can prepare a nice feedback for our user
 
-{{< highlight js >}}
+{{< highlight html >}}
 
     <div id="app>
         <div v-if="loading">

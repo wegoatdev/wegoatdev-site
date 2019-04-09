@@ -24,6 +24,7 @@ fields:
   name: image
   label: image
 pages:
+- content/posts/how-to-consume-api-in-vue-with-axios.md
 - content/posts/how-to-count-most-used-words-in-database-with-python.md
 - content/posts/why-do-we-need-to-save-created-at-and-update-at-field-in-database.md
 - content/posts/how-to-export-firebase-firestore-database-for-free.md

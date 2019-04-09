@@ -10,7 +10,7 @@ tags:
 image: https://res.cloudinary.com/dr1pp4pqp/image/upload/v1553983982/blog/poster-sample.png
 
 ---
-Website is more powerful that we thought, it has [canvas element](https://www.w3schools.com/html/html5_canvas.asp) to draw graphics on the web. If we combine this with the ability to play DOM in javascript, well, actually to draw in canvas we have to use javascript :D.
+Website is more powerful that we thought, do you know it has [canvas element](https://www.w3schools.com/html/html5_canvas.asp) to draw graphics on the web? If we combine this with the ability to manipulate DOM in javascript, we can make our poster generator for our next instagram or any social media post.
 
 For a little warm up, start by [drawing text in canvas](/how-to-draw-text-in-html-canvas/) and [drawing image in canvas](/how-to-draw-image-in-html-canvas/)
 

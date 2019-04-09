@@ -111,7 +111,15 @@ Here is how the form looks like, you can customize it however you want. We will 
        return false
       }
 
-    //Redraw will call all the functions, so we don't have to reload the page function reDraw() { ctx.clearRect(0, 0, canvas.width, canvas.height) drawBG() drawText() drawBrandImg() addPhoto() addName() }
+    //Redraw will call all the functions, so we don't have to reload the page
+    function reDraw() { 
+    	ctx.clearRect(0, 0, canvas.width, canvas.height) 
+        drawBG() 
+        drawText() 
+        drawBrandImg() 
+        addPhoto() 
+        addName() 
+    }
 
     //===== Draw Brand/ Watermark
     //read image from file and draw to canvas
@@ -218,6 +226,8 @@ Here is how the form looks like, you can customize it however you want. We will 
     }
 
 {{< / highlight >}}
+
+
 Everytime you see X or Y variable, it's the starting point to draw something, you could try to change the position of each element by playing with these vars.
 
 [Full repo on github](https://github.com/wegoatdev/canvas-poster-quote)

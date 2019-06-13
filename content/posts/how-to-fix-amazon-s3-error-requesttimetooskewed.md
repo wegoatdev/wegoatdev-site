@@ -10,14 +10,21 @@ Suddenly one of my s3 function i use normally got an error with message  Request
 
 In my case, i use S3 to automate my database backup with Laravel as backend with this error message:
 
-    Exception message: Could not connect to disk s3 because: exception 'Aws\S3\Exception\S3Exception'
+{{< highlight js >}}  
+Exception message: Could not connect to disk s3 because: exception 'Aws\\S3\\Exception\\S3Exception'
+
+{{< / highlight >}}
 
 It doesn't really matter what backend language do you use, as long as you got this "request time too skewed" from S3 message, you can solve this by adjust the timezone on your server
 
 If you are using ubuntu just install ntp
 
-    sudo apt-get install ntp
+{{< highlight js >}}  
+sudo apt-get install ntp  
+{{< / highlight >}}
 
-and restart the server
+and restart the server with
 
-    sudo service ntp restart
+{{< highlight js >}}  
+sudo service ntp restart  
+{{< / highlight >}}

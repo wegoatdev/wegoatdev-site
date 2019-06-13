@@ -1,7 +1,6 @@
 +++
 date = "2019-06-13T16:00:00+00:00"
 description = "How to get and update text between two words in mysql. We can use the replace method and combine in with normal Where clause"
-draft = true
 image = ""
 tags = ["sql"]
 title = "Update text between two words in mysql"

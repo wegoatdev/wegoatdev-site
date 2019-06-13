@@ -1,7 +1,6 @@
 +++
 date = "2019-06-14T16:00:00+00:00"
 description = "How to optimize laravel app with caching route and config. All it's done by simple one-line command"
-draft = true
 image = ""
 tags = ["laravel"]
 title = "How to optimize laravel app with caching route and config"

@@ -24,6 +24,7 @@ fields:
   name: image
   label: image
 pages:
+- content/posts/develop-an-android-app-with-kotlin-from-web-development-background.md
 - content/posts/how-to-optimize-laravel-app-with-caching-route-and-config.md
 - content/posts/update-text-between-two-words-in-mysql.md
 - content/posts/filter-data-by-interval-time-between-in-mysql.md

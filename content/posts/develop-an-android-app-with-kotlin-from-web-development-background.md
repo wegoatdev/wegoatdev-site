@@ -14,8 +14,8 @@ So i came back to the root, which is Java. Saw some java code, meh.. not fun! Do
 
 Kotlin is also official language for android app just like java, which means you don't need to worry about speed or stability., since It's the native language for android device.
 
-After deciding which language to learn, now we can move to the learning resource. Me myself, i use udacity is the main source, the course is teach by professionals in a fun way and ... for free!
+After deciding which language to learn, now we can move to the learning resource. Me myself, i use [udacity](https://udacity.com/courses/all) is the main source, the course is taught by professionals in a fun way and ... for free!
 
-Even thought some resources are available, that doesn't mean the learning itself will be easy, ever for me who already have some programming background. Building android app is very different with web development. Some code looks very redundant and unnecessary to write. Everytime i do something, I always wonder if there are an easier way to do this. Yes, it works, but the code doesn't looks clean at all. 
+Even thought some resources are available, that doesn't mean the learning itself will be easy, even for me who already have some programming background. Building android app is very different with web development. Some code looks very redundant and unnecessary to write. Every time i do something, I always wonder if there are an easier way to do this. Yes, it works, but the code doesn't looks clean at all.
 
 I hope in the next few years, the android app will become easier to learn and more fun for us as developer

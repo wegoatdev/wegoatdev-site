@@ -4,7 +4,7 @@ description = "I'd like to share my experince as a web developer to try learn ho
 draft = true
 image = ""
 tags = ["kotlin"]
-title = "Develop an android app with kotlin from web development background"
+title = "My experience learning android with kotlin from web development background"
 
 +++
 These last few months have been fun and challenging for me, i started learning "how to create an android app" with my background as a web developer. After stay in my comfort zone (HTML, CSS, JS and backend server) for around 5 years, i finally made my decision to accept this challenge.
@@ -13,4 +13,10 @@ I turned to google to get my head around android development. There are already 
 
 So i came back to the root, which is Java. Saw some java code, meh.. not fun! Don't get me wrong, i learned a lot about programming through Java (much respect and love), but to use it nowadays, i don't think i can handle it. It's just look too old and complicated for me. Luckily, Kotlin comes to rescue!
 
-Kotlin is also official language for android app just like java, which means you don't need to worry about speed or stability. It's the native language for android device. 
+Kotlin is also official language for android app just like java, which means you don't need to worry about speed or stability., since It's the native language for android device.
+
+After deciding which language to learn, now we can move to the learning resource. Me myself, i use udacity is the main source, the course is teach by professionals in a fun way and ... for free!
+
+Even thought some resources are available, that doesn't mean the learning itself will be easy, ever for me who already have some programming background. Building android app is very different with web development. Some code looks very redundant and unnecessary to write. Everytime i do something, I always wonder if there are an easier way to do this. Yes, it works, but the code doesn't looks clean at all. 
+
+I hope in the next few years, the android app will become easier to learn and more fun for us as developer

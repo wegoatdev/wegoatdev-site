@@ -6,7 +6,7 @@ tags = ["javascript"]
 title = "How to add HTML content inside sweetalert box"
 
 +++
-Before you do this, make sure you use [sweetalert version 2](https://sweetalert2.github.io/), not the first one. If you're still use the first one, i know you'll back up a bit. Since i'm using sweetalert boxes all over my webiste, i feel really lazy too to upgrade to 2nd version, but it's actually very easy, in most cases just use swal.fire instead just swal.
+Before you do this, make sure you use [sweetalert version 2](https://sweetalert2.github.io/), not the first one. If you're still using the 1st version, i know you'll back up a bit. Since i'm using sweetalert boxes all over my webiste, i feel really lazy too to upgrade to 2nd version, but it's actually very easy, in most cases just use swal.fire instead just swal.
 
 Okay.. now let's see how you can add html content inside your sweetalert box. Here is an example if i want to make 2 different inputs
 

@@ -12,19 +12,19 @@ Okay.. now let's see how you can add html content inside your sweetalert box. He
 
 {{< highlight js >}}
 
-       var htmlContent = "<input placeholder='text' class='swal2-input' id='swal-input1'>" +
-                         "<input placeholder='link' class='swal2-input' id='swal-input2'>"
-    
-            swal.fire({
-                title: "Put your Link",
-                html: htmlContent,
-                focusConfirm: false,
-                preConfirm: function(){
-                            textInput = $('#swal-input1').val()
-                            linkInput = $('#swal-input2').val()
-    						//do something
-                        }
-            })
+var htmlContent = "<input placeholder='text' class='swal2-input' id='swal-input1'>" +
+                     "<input placeholder='link' class='swal2-input' id='swal-input2'>"
+
+        swal.fire({
+            title: "Put your Link",
+            html: htmlContent,
+            focusConfirm: false,
+            preConfirm: function(){
+                        textInput = $('#swal-input1').val()
+                        linkInput = $('#swal-input2').val()
+						//do something
+                    }
+        })
 
 {{< / highlight >}}
 

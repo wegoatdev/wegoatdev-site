@@ -24,6 +24,7 @@ fields:
   name: image
   label: image
 pages:
+- content/posts/how-to-upgrade-firebase-cloud-function-to-node-8.md
 - content/posts/how-to-add-html-content-inside-sweetalert-box.md
 - content/posts/create-future-post-for-firebase-blog.md
 - content/posts/how-to-schedule-post-in-future-for-hugo.md

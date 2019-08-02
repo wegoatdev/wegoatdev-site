@@ -1,7 +1,6 @@
 +++
 date = "2019-08-01T16:00:00+00:00"
 description = "Here is how you can add html content or html tag inside your sweetalert box"
-draft = true
 image = ""
 tags = ["javascript"]
 title = "How to add HTML content inside sweetalert box"

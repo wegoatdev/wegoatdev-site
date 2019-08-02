@@ -1,3 +1,7 @@
+## Warning
+    If you want to change something, always git pull,
+    since forestry change many things
+
 ## Cheatsheet
 New file
     hugo new posts/mypost.md

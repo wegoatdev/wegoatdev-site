@@ -1,7 +1,6 @@
 +++
 date = "2019-08-06T16:00:00+00:00"
 description = "for new firebase user who start to play with firebase database it's possible you meet with this firebase.database is not a function error"
-draft = true
 image = ""
 tags = ["firebase"]
 title = "How to solve firebase.database is not a function"

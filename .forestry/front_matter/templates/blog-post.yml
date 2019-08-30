@@ -24,6 +24,7 @@ fields:
   name: image
   label: image
 pages:
+- content/posts/how-to-upload-image-file-in-firebase-with-progress-bar.md
 - content/posts/how-to-solve-firebase-database-is-not-a-function.md
 - content/posts/how-to-custom-style-momentum-chrome-extensions.md
 - content/posts/how-to-upgrade-firebase-cloud-function-to-node-8.md

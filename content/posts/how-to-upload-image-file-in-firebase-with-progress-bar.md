@@ -24,38 +24,31 @@ just like other firebase project you have to load the necessary firebase's js fi
 
 that's it, try to upload any fire you want, it works. But of course, there is no feedback for now, we don't really know if it successful or not. So, let's give it a nice feedback for user by showing the progress bar
 
-{{< highlight javascript >}}  
-//add new progressbar Button  
-<progress value="0" max="100" id="uploadProgress">0%</progress>
-
-//new javascript  
-var progress = document.getElementById('uploadProgress')
-
-button.addEventListener('change', function(e){  
-var file = e.target.files\[0\];  
-var storageRef  = storage.ref("foldername/" + file.name)  
-var uploadTask = storageRef.put(file)
-
-uploadTask.on('state_changed', loadUpload, errUpload, completeUpload)
-
-      //to show progress  
-      function loadUpload(data){  
-           var percent = (data.bytesTransferred/data.totalBytes) * 100  
-           progress.value = percent  
-        }
-
-   //to show error  
-    function errUpload(err){  
-      console.log('error')  
-      console.log(err)  
-    }
-
-  //to show success  
-  function completeUpload(data){  
-      console.log('success')  
-      console.log(data)  
-   }
-
-})  
-
-{{< / highlight >}}
+    //add new progressbar Button
+    <progress value="0" max="100" id="uploadProgress">0%</progress>
+    //new javascript
+    var progress = document.getElementById('uploadProgress')
+    button.addEventListener('change', function(e){
+    	var file = e.target.files[0]
+        var storageRef  = storage.ref("foldername/" + file.name)
+        var uploadTask = storageRef.put(file)
+    
+    	uploadTask.on('state_changed', loadUpload, errUpload, completeUpload)
+          //show progress  
+          function loadUpload(data){  
+               var percent = (data.bytesTransferred/data.totalBytes) * 100  
+               progress.value = percent  
+            }
+            
+            //On error    
+            function errUpload(err){      
+            	console.log('error')      
+                console.log(err)    
+    		}
+            
+              //On success  
+              function completeUpload(data){      
+              	 console.log('success')      
+    	          console.log(data)   
+              }
+        })  

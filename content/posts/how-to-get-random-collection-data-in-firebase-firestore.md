@@ -1,7 +1,6 @@
 +++
 date = "2019-08-29T16:00:00+00:00"
 description = "Learn How to get random collection /data in firebase firestore"
-draft = true
 image = ""
 tags = ["firebase"]
 title = "How to get random collection /data in firebase firestore"

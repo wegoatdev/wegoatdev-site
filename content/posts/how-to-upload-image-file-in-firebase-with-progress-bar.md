@@ -8,26 +8,26 @@ title = "How to upload image / file in firebase with progress bar"
 +++
 Learn how to upload image or any file in firebase with progress bar to show how many percent your data already uploaded. First we add the upload functionality, don't forget to give it an id
 
-{{< highlight js >}}  
+{{< highlight javascript >}}  
 <input type="file" value="upload" id="uploadButton">  
 {{< / highlight >}}
 
 just like other firebase project you have to load the necessary firebase's js file and set the configuration, now specific for the upload part
 
-{{< highlight js >}}  
+{{< highlight javascript >}}  
 var storage  = firebase.storage()  
 var button = document.getElementById('uploadButton')
 
 button.addEventListener('change', function(e){  
-	 var file = e.target.files\[0\]	   
-         var storageRef =     storage.ref("foldername/" + file.name)  
-         storageRef.put(file)  
+var file = e.target.files\[0\]	  
+var storageRef =     storage.ref("foldername/" + file.name)  
+storageRef.put(file)  
 })  
 {{< / highlight >}}
 
 that's it, try to upload any fire you want, it works. But of course, there is no feedback for now, we don't really know if it successful or not. So, let's give it a nice feedback for user by showing the progress bar
 
-{{< highlight js >}}  
+{{< highlight javascript >}}  
 //add new progressbar Button  
 <progress value="0" max="100" id="uploadProgress">0%</progress>
 
@@ -35,29 +35,30 @@ that's it, try to upload any fire you want, it works. But of course, there is no
 var progress = document.getElementById('uploadProgress')
 
 button.addEventListener('change', function(e){  
-            var file = e.target.files\[0\];  
-            var storageRef  = storage.ref("foldername/" + file.name)  
-            var uploadTask = storageRef.put(file)
+var file = e.target.files\[0\];  
+var storageRef  = storage.ref("foldername/" + file.name)  
+var uploadTask = storageRef.put(file)
 
-            uploadTask.on('state_changed', loadUpload, errUpload, completeUpload)
+uploadTask.on('state_changed', loadUpload, errUpload, completeUpload)
 
-          //to show progress  
-          function loadUpload(data){  
-               var percent = (data.bytesTransferred/data.totalBytes) * 100  
-               progress.value = percent  
-            }
+      //to show progress  
+      function loadUpload(data){  
+           var percent = (data.bytesTransferred/data.totalBytes) * 100  
+           progress.value = percent  
+        }
 
-//to show error  
-function errUpload(err){  
-                console.log('error')  
-                console.log(err)  
-}
+   //to show error  
+    function errUpload(err){  
+      console.log('error')  
+      console.log(err)  
+    }
 
-//to show success  
-function completeUpload(data){  
-     console.log('success')  
-     console.log(data)  
-}
+  //to show success  
+  function completeUpload(data){  
+      console.log('success')  
+      console.log(data)  
+   }
 
-        })  
+})  
+
 {{< / highlight >}}

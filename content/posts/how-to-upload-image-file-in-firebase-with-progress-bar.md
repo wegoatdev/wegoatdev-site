@@ -8,20 +8,19 @@ title = "How to upload image / file in firebase with progress bar"
 +++
 Learn how to upload image or any file in firebase with progress bar to show how many percent your data already uploaded. First we add the upload functionality, don't forget to give it an id
 
-    {{< highlight javascript >}}<input type="file" value="upload" id="uploadButton">{{< / highlight >}}
+    {{< highlight js >}}<input type="file" value="upload" id="uploadButton">{{< / highlight >}}
 
 just like other firebase project you have to load the necessary firebase's js file and set the configuration, now specific for the upload part
 
-{{< highlight javascript >}}  
-var storage  = firebase.storage()  
-var button = document.getElementById('uploadButton')
-
-button.addEventListener('change', function(e){  
-var file = e.target.files\[0\]	  
-var storageRef =     storage.ref("foldername/" + file.name)  
-storageRef.put(file)  
-})  
-{{< / highlight >}}
+    {{< highlight js >}}
+    var storage  = firebase.storage()
+    var button = document.getElementById('uploadButton')
+    button.addEventListener('change', function(e){
+    	var file = e.target.files[0]	
+        var storageRef = storage.ref("foldername/" + file.name)
+        storageRef.put(file)
+    })
+    {{< / highlight >}}
 
 that's it, try to upload any fire you want, it works. But of course, there is no feedback for now, we don't really know if it successful or not. So, let's give it a nice feedback for user by showing the progress bar
 

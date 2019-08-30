@@ -24,7 +24,7 @@ just like other firebase project you have to load the necessary firebase's js fi
 
 that's it, try to upload any fire you want, it works. But of course, there is no feedback for now, we don't really know if it successful or not. So, let's give it a nice feedback for user by showing the progress bar
 
-    //add new progressbar Button
+    {{< highlight js >}}//add new progressbar Button
     <progress value="0" max="100" id="uploadProgress">0%</progress>
     //new javascript
     var progress = document.getElementById('uploadProgress')
@@ -51,4 +51,4 @@ that's it, try to upload any fire you want, it works. But of course, there is no
               	 console.log('success')      
     	          console.log(data)   
               }
-        })  
+        }) {{< / highlight >}} 

@@ -24,6 +24,7 @@ fields:
   name: image
   label: image
 pages:
+- content/posts/read-json-file-with-random-key-in-go-lang.md
 - content/posts/how-to-get-random-collection-data-in-firebase-firestore.md
 - content/posts/how-to-upload-image-file-in-firebase-with-progress-bar.md
 - content/posts/how-to-solve-firebase-database-is-not-a-function.md

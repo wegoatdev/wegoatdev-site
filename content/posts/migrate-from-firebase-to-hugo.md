@@ -148,4 +148,4 @@ Make sure the data types in struct model meets with your need.
 
 Now run the script "go run main.go", all files will be created, now just copy paste it to your hugo site
 
-This code also available on github to tweak
+This code also [available on github](https://github.com/hilmanrdn/Firebase-json-to-Hugo-markdown-files) to tweak

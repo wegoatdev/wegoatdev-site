@@ -13,7 +13,6 @@ Here is how i convert or migrate from firebase to hugo markdown to create post. 
 * Export database from firestore
 * Run script to generate markdowns
 
-  
 **Export database from firestore**
 
 Luckily we don't have to do this ourself, Dalenguyen made a nodejs package for us to use, here is [firebase import export](https://github.com/dalenguyen/firestore-import-export)
@@ -94,10 +93,10 @@ After exported the database, now create "main.go" file and add this code
     
             //markdown file structure
             text := "+++\n" +
-                    "title: "+ title + "\n" +
-                    "description: "+ description + "\n" +
-                    "date: "+ created_at + "\n" +
-                    "tag: "+ tag + "\n" +
+                    "title = "+ title + "\n" +
+                    "description = "+ description + "\n" +
+                    "date = "+ created_at + "\n" +
+                    "tag = "+ tag + "\n" +
                     "+++ \n" +
                     subject
     

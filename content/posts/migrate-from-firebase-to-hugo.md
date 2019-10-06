@@ -14,15 +14,33 @@ Here is how i convert or migrate from firebase to hugo markdown to create post. 
 * Export database from firestore
 * Run script to generate markdowns
 
-  **Export database from firestore**
+  **  
+  Export database from firestore**
 
   Luckily we don't have to do this ourself, Dalenguyen made a nodejs package for us to use, here is [firebase import export](https://github.com/dalenguyen/firestore-import-export)
+
+Tweak the exported json file a little bit, to this format (in this example i just use title and desc, feel free to add other datas)
+
+{{< highlight json >}}
+
+       {    
+        "0BVxYRh8MixS0mYEtZ8v":{
+                "title":"the titls",
+                "subject":"the subject"
+        },
+        "0BVxYRh8MixasdS0mYEtZ8v":{
+                "title":"the titls2",
+                "subject":"the subject2"
+        }
+        }
+
+{{< / highlight >}}
 
 **Write go script**
 
 After exported the database, now create "main.go" file and add this code
 
-{{< highlight js >}}
+{{< highlight go >}}
 
     package main
     
@@ -126,7 +144,7 @@ After exported the database, now create "main.go" file and add this code
 
 {{< / highlight >}}
 
-Make sure the data types in struct model meets with your need. 
+Make sure the data types in struct model meets with your need.
 
 Now run the script "go run main.go", all files will be created, now just copy paste it to your hugo site
 

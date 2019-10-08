@@ -1,7 +1,6 @@
 +++
 date = "2019-10-08T16:00:00+00:00"
 description = "How to add search functionality in your Hugo static website. It's a bit tricky, but not that hard"
-draft = true
 image = ""
 tags = ["vue", "hugo"]
 title = "Add live search in Hugo website"

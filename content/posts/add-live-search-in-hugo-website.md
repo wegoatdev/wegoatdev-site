@@ -17,12 +17,18 @@ It's okay if you don't want to use Vue.JS (I use this for the sake of simplicity
 
 First, in our config.yaml file, add this line (In this case we add section because i want to list all my posts in section pages).
 
+{{< highlight js >}}
+
     outputs:
         section : ["HTML", "RSS", "JSON"]
+
+{{< / highlight >}}
 
 It will make our section page, outputing not just HTML and RSS (which by default both of these will be used) but also a json for us.
 
 Now, let's prepare a json file for the output, i'll add a new file called "list.json.json" *yes, two json inside /layout/_default folder. And then write this code
+
+{{< highlight js >}}
 
     {
         "data": [
@@ -35,10 +41,14 @@ Now, let's prepare a json file for the output, i'll add a new file called "list.
         ]
     }
 
+{{< / highlight >}}
+
 Notice, title and link is the key i use, feel free to change it with your need. Go to "url/YOURSECTION/index.json" , that's our json API ready to use!
 
 For the second task, create the page for our search. I make one static page, create an EMPTY file in "/content/search/_index.md".  
 Next for the layout, create file "layouts/section/search.html". Write this code inside new HTML (I'm using Vue.JS for easy templating and rendering our data)
+
+{{< highlight html >}}
 
     <section id="content">
         <label for="search">Search</label>
@@ -82,5 +92,7 @@ Next for the layout, create file "layouts/section/search.html". Write this code 
         })
       })();
     </script>
+
+{{< / highlight >}}
 
 That's it now as you type something in the box, the items will change itself, even better when you have form in other page just direct it to this page, it will take any query in your URL with format "domain.com/search/?q=searchsomething"

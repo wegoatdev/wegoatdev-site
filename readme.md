@@ -13,6 +13,7 @@ Watch Sass
 
 Deploy
     ./deploy
+    ./deploy.sh
 
 Highlight
     {{< highlight lang >}}

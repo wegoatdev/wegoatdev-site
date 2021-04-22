@@ -24,6 +24,8 @@ and done! of course you can automate this task via cron job.
 
 Put this command at app/Console/Kernel.app
 
+{{< highlight >}}
+
 ```php
 protected function schedule(Schedule $schedule){
  //backup and clean backup
@@ -31,6 +33,8 @@ protected function schedule(Schedule $schedule){
  $schedule->command('backup:run --only-db')->twiceDaily(11, 23)->timezone('Asia/Singapore');
 }
 ```
+
+{{< / highlight >}}
 
 You can adjust the command with your need. Above command will run the cleaning weekly (remove old database at your storage) depend on your setting and run only database backup twice daily with specific timezone.
 

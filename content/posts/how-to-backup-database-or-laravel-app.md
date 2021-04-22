@@ -24,15 +24,13 @@ and done! of course you can automate this task via cron job.
 
 Put this command at app/Console/Kernel.app
 
-{{< highlight >}}
+{{< highlight php >}}
 
-```php
 protected function schedule(Schedule $schedule){
  //backup and clean backup
  $schedule->command('backup:clean')->weekly();
  $schedule->command('backup:run --only-db')->twiceDaily(11, 23)->timezone('Asia/Singapore');
 }
-```
 
 {{< / highlight >}}
 

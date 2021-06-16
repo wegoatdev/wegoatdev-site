@@ -25,3 +25,8 @@ HUGO_VERSION = "0.50"
 
 [context.next.environment]
 HUGO_ENABLEGITINFO = "true"
+
+[[redirects]]
+  from = "/*"
+  to = "https://https://freestuff.dev/blog/:splat"
+  status = 301
